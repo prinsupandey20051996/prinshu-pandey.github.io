@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prinshu Pandey — Product Manager & AI Product Manager</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#1D9E75;
+  --accent2:#0F6E56;
+  --text:#1a1a18;
+  --muted:#6b6b67;
+  --surface:#f4f3ef;
+  --border:#dddcd7;
+  --white:#ffffff;
+  --serif:'DM Serif Display','Georgia','Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+}
+/* Force all block elements to display correctly */
+div,section,nav,header,footer,article,aside,main{display:block}
+nav{display:flex!important}
+.navlinks{display:flex!important}
+.hero-inner{display:grid!important}
+.hero-stats{display:grid!important}
+.about-grid{display:grid!important}
+.mini-case{display:grid!important}
+.case-grid-inner{display:grid!important}
+.skills-grid{display:grid!important}
+.certs-grid{display:grid!important}
+.projects-grid{display:grid!important}
+.btn-row{display:flex!important}
+.cert-row{display:flex!important}
+.impact-row{display:flex!important}
+.metrics-row{display:flex!important}
+.tools-grid{display:flex!important}
+.contact-links{display:flex!important}
+.exp-head{display:flex!important}
+.exp-company{display:flex!important}
+.journey-step{display:flex!important}
+.process-flow{display:flex!important}
+.ach-card{display:flex!important}
+.ps-num{display:flex!important}
+.step-dot{display:flex!important}
+.company-icon{display:flex!important}
+.hero{display:flex!important}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--white);line-height:1.65;margin:0;padding:0}
+nav{position:sticky;top:0;z-index:100;background:#ffffff;border-bottom:1px solid #dddcd7;padding:0 5%;display:flex;flex-direction:row;align-items:center;justify-content:space-between;height:56px;width:100%}
+.logo{font-family:var(--serif);font-size:18px;color:var(--text);text-decoration:none}
+.navlinks{display:flex;gap:28px}
+.navlinks a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.navlinks a:hover{color:var(--text)}
+section{padding:96px 5%}
+.container{max-width:1040px;margin:0 auto}
+
+/* Hero */
+.hero{background:var(--surface);min-height:90vh;display:flex;align-items:center;padding:0 5%}
+.hero-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.hero h1{font-family:var(--serif);font-size:clamp(42px,5vw,64px);line-height:1.1;margin-bottom:24px;color:var(--text)}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-desc{font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:36px}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:100px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:all .2s}
+.btn-primary{background:var(--text);color:var(--white)}
+.btn-primary:hover{background:#333}
+.btn-outline{border:1.5px solid var(--border);color:var(--text)}
+.btn-outline:hover{background:var(--surface)}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.stat-card{background:var(--white);border-radius:16px;padding:24px 20px;border:1px solid var(--border)}
+.stat-number{font-family:var(--serif);font-size:38px;color:var(--text);line-height:1}
+.stat-number span{color:var(--accent)}
+.stat-label{font-size:13px;color:var(--muted);margin-top:6px}
+.cert-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.badge{display:inline-block;font-size:11px;font-weight:600;padding:5px 12px;border-radius:100px;background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.badge.green{background:#E1F5EE;color:#0F6E56;border-color:#9FE1CB}
+
+/* Section headings */
+.section-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section-title{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;margin-bottom:20px}
+.section-sub{font-size:16px;color:var(--muted);line-height:1.75;max-width:560px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:56px}
+.journey-step{display:flex;gap:16px;margin-bottom:28px}
+.step-dot{width:36px;height:36px;border-radius:50%;background:var(--surface);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0;margin-top:2px}
+.step-dot.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.step-text h4{font-size:15px;font-weight:600;margin-bottom:4px}
+.step-text p{font-size:14px;color:var(--muted);line-height:1.6}
+.philosophy-card{background:var(--surface);border-radius:20px;padding:36px;border:1px solid var(--border)}
+.philosophy-card blockquote{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--text);margin-bottom:20px;font-style:italic}
+.philosophy-card p{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* Process */
+.process-bg{background:var(--surface)}
+.process-flow{display:flex;gap:0;margin-top:48px;overflow-x:auto}
+.process-step{flex:1;min-width:140px;position:relative}
+.process-step:not(:last-child)::after{content:'';position:absolute;top:20px;right:-1px;width:2px;height:40px;background:var(--border)}
+.ps-inner{padding:20px 16px;text-align:center}
+.ps-num{width:40px;height:40px;border-radius:50%;background:var(--white);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--muted);margin:0 auto 12px}
+.ps-num.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.ps-title{font-size:13px;font-weight:600;margin-bottom:6px}
+.ps-desc{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* Experience */
+.exp-list{margin-top:48px;display:flex;flex-direction:column;gap:32px}
+.exp-card{background:var(--white);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.exp-head{display:flex;align-items:start;justify-content:space-between;padding:28px 32px 20px;border-bottom:1px solid var(--border)}
+.exp-company{display:flex;align-items:center;gap:14px}
+.company-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff}
+.ey-icon{background:#2c2c2a}
+.iks-icon{background:#1D9E75}
+.exp-title{font-size:17px;font-weight:600}
+.exp-sub{font-size:13px;color:var(--muted);margin-top:2px}
+.exp-date{font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
+.exp-body{padding:28px 32px}
+.mini-case{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px}
+.mc-item h5{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.mc-item p{font-size:13px;color:var(--muted);line-height:1.6}
+.impact-row{display:flex;flex-wrap:wrap;gap:10px}
+.impact-chip{background:#E1F5EE;color:#0F6E56;border:1px solid #9FE1CB;border-radius:100px;font-size:12px;font-weight:600;padding:5px 14px}
+
+/* Case Studies */
+.case-grid{display:flex;flex-direction:column;gap:40px;margin-top:48px}
+.case-card{border-radius:24px;overflow:hidden;border:1px solid var(--border)}
+.case-banner{height:6px;width:100%}
+.case-banner.teal{background:linear-gradient(90deg,#1D9E75,#5DCAA5)}
+.case-banner.blue{background:linear-gradient(90deg,#185FA5,#378ADD)}
+.case-banner.amber{background:linear-gradient(90deg,#BA7517,#EF9F27)}
+.case-content{padding:32px}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.case-title{font-family:var(--serif);font-size:26px;margin-bottom:8px}
+.case-subtitle{font-size:14px;color:var(--muted);margin-bottom:24px}
+.case-grid-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.case-block h6{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.case-block p{font-size:13px;color:var(--text);line-height:1.6}
+.metrics-row{display:flex;flex-wrap:wrap;gap:12px}
+.metric{text-align:center;background:var(--surface);border-radius:12px;padding:14px 20px;min-width:90px}
+.metric-val{font-family:var(--serif);font-size:24px;color:var(--accent)}
+.metric-lab{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* Projects */
+.projects-bg{background:var(--surface)}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.proj-card{background:var(--white);border-radius:20px;padding:28px;border:1px solid var(--border);transition:transform .2s}
+.proj-card:hover{transform:translateY(-3px)}
+.proj-icon{font-size:28px;margin-bottom:14px}
+.proj-title{font-size:16px;font-weight:600;margin-bottom:8px}
+.proj-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+.proj-tag{font-size:11px;padding:4px 10px;border-radius:100px;background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.skill-group{background:var(--surface);border-radius:16px;padding:24px}
+.skill-group h4{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.skill-list{display:flex;flex-direction:column;gap:10px}
+.skill-item{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.skill-item span{color:var(--muted)}
+.skill-bar{flex:1;height:4px;background:var(--border);border-radius:4px;margin:0 12px;overflow:hidden}
+.skill-fill{height:100%;border-radius:4px;background:var(--accent)}
+.tools-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.tool-pill{display:flex;align-items:center;gap:8px;padding:10px 18px;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500}
+.tool-dot{width:8px;height:8px;border-radius:50%}
+
+/* Certs */
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.cert-card{background:var(--surface);border-radius:16px;padding:24px;border:1px solid var(--border);position:relative;overflow:hidden}
+.cert-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.cert-card.scrum::before{background:#1D9E75}
+.cert-card.ai::before{background:#378ADD}
+.cert-card.six::before{background:#BA7517}
+.cert-card.kpmg::before{background:#D4537E}
+.cert-icon{font-size:24px;margin-bottom:12px}
+.cert-name{font-size:14px;font-weight:600;margin-bottom:4px}
+.cert-issuer{font-size:12px;color:var(--muted)}
+
+/* Achievements */
+.ach-bg{background:var(--text)}
+.ach-bg .section-label{color:#5DCAA5}
+.ach-bg .section-title{color:#fff}
+.ach-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px;display:flex;gap:24px;align-items:start;margin-top:32px}
+.ach-icon{font-size:36px;flex-shrink:0}
+.ach-body h3{font-size:18px;font-weight:600;color:#fff;margin-bottom:8px}
+.ach-body p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7}
+.ach-meta{font-size:12px;color:#5DCAA5;font-weight:600;margin-top:10px}
+
+/* Contact */
+.contact-inner{max-width:680px;margin:0 auto;text-align:center}
+.contact-links{display:flex;justify-content:center;gap:20px;margin-top:40px;flex-wrap:wrap}
+.contact-link{display:flex;align-items:center;gap:10px;padding:16px 28px;border-radius:16px;border:1.5px solid var(--border);font-size:14px;font-weight:500;text-decoration:none;color:var(--text);transition:all .2s}
+.contact-link:hover{background:var(--surface);border-color:var(--accent)}
+.contact-link svg{width:18px;height:18px;flex-shrink:0}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:24px 5%;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--accent);text-decoration:none}
+
+@media(max-width:768px){
+  .hero-inner,.about-grid{grid-template-columns:1fr;gap:40px}
+  .mini-case,.case-grid-inner{grid-template-columns:1fr 1fr}
+  .skills-grid,.certs-grid{grid-template-columns:1fr 1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .process-flow{flex-wrap:wrap}
+  .navlinks{gap:16px}
+  section{padding:64px 5%}
+}
+@media(max-width:480px){
+  .navlinks{display:none}
+  .mini-case,.case-grid-inner,.skills-grid,.certs-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#home">Prinshu Pandey</a>
+  <div class="navlinks">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Case Studies</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Product Manager · AI Products · Supply Chain</div>
+      <h1>Building products that <em>think,</em> scale, and ship.</h1>
+      <p class="hero-desc">CSPO® &amp; CSM® certified PM with 3+ years turning ambiguous problems into AI-powered SaaS products — from 0→1 physician portals to enterprise forecasting engines across 8 European markets.</p>
+      <div class="btn-row">
+        <a href="#work" class="btn btn-primary">View Case Studies</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+      <div class="cert-row">
+        <span class="badge green">CSPO®</span>
+        <span class="badge green">CSM®</span>
+        <span class="badge">Agentic AI – Vanderbilt</span>
+        <span class="badge">Lean Six Sigma</span>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-number">3<span>+</span></div>
+        <div class="stat-label">Years in Product &amp; AI</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">22<span>%</span></div>
+        <div class="stat-label">Manual effort reduced via AI automation</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">8</div>
+        <div class="stat-label">European markets managed at EY</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">500<span>+</span></div>
+        <div class="stat-label">User stories shipped in JIRA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">From turbines to<br/>AI product systems.</h2>
+    <div class="about-grid">
+      <div>
+        <div class="journey-step">
+          <div class="step-dot">1</div>
+          <div class="step-text">
+            <h4>Engineering Foundation</h4>
+            <p>B.Tech in Mechanical Engineering taught me systems thinking — how components interact, where failure points hide, and how to engineer reliability under constraints. Skills I apply to product architecture every day.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-dot">2</div>
+          <div class="step-text">
+            <h4>Analytics &amp; Data Science</h4>
+            <p>PGDM in Big Data Analytics at Goa Institute of Management. Learned to speak the language of data — SQL, Python, R, Tableau — and how to turn signals into strategy. Campus winner of the KPMG Ideation Challenge.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-dot active">3</div>
+          <div class="step-text">
+            <h4>AI Product Management</h4>
+            <p>At IKS Health, built AI-powered healthcare products and launched a physician portal from zero to paying clients in 10 days. At EY, now managing enterprise forecasting AI for Unilever across Europe.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-dot active">→</div>
+          <div class="step-text">
+            <h4>What's Next</h4>
+            <p>Seeking product leadership roles at AI-first companies where I can shape the next generation of intelligent, human-centered systems — at the intersection of AI, data, and enterprise workflows.</p>
+          </div>
+        </div>
+      </div>
+      <div class="philosophy-card">
+        <blockquote>"The best products don't just solve problems — they reframe what users believe is possible."</blockquote>
+        <p>I believe great product management lives at the intersection of user empathy, data rigor, and technical possibility. I don't just collect requirements — I challenge assumptions, prototype thinking, and build alignment across engineering, design, and business stakeholders.</p>
+        <p style="margin-top:14px">Whether I'm running MoSCoW prioritization with a data science team or writing acceptance criteria for an NLP validation pipeline, I bring the same mindset: <strong>start with the outcome, work backwards with clarity.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-bg" id="process">
+  <div class="container">
+    <div class="section-label">Product Philosophy</div>
+    <h2 class="section-title">How I build products</h2>
+    <p class="section-sub">A repeatable system refined across healthcare SaaS, enterprise AI, and supply chain analytics.</p>
+    <div class="process-flow">
+      <div class="process-step"><div class="ps-inner"><div class="ps-num active">01</div><div class="ps-title">Problem</div><div class="ps-desc">Deep discovery. Jobs-to-be-done. Stakeholder interviews.</div></div></div>
+      <div class="process-step"><div class="ps-inner"><div class="ps-num active">02</div><div class="ps-title">Research</div><div class="ps-desc">Empathy maps, user personas, competitor analysis.</div></div></div>
+      <div class="process-step"><div class="ps-inner"><div class="ps-num active">03</div><div class="ps-title">Insights</div><div class="ps-desc">Synthesize data into prioritized opportunity space.</div></div></div>
+      <div class="process-step"><div class="ps-inner"><div class="ps-num active">04</div><div class="ps-title">MVP</div><div class="ps-desc">Scoped PRD, acceptance criteria, rapid sprint execution.</div></div></div>
+      <div class="process-step"><div class="ps-inner"><div class="ps-num active">05</div><div class="ps-title">Experiment</div><div class="ps-desc">A/B testing, KPI dashboards, feedback loops.</div></div></div>
+      <div class="process-step"><div class="ps-inner"><div class="ps-num active">06</div><div class="ps-title">Scale</div><div class="ps-desc">GTM, performance optimization, cross-market rollout.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Professional Experience</div>
+    <h2 class="section-title">Where I've shipped product</h2>
+    <div class="exp-list">
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <div class="exp-company">
+            <div class="company-icon ey-icon">EY</div>
+            <div>
+              <div class="exp-title">Product Consultant</div>
+              <div class="exp-sub">Ernst &amp; Young · Enterprise AI / Supply Chain</div>
+            </div>
+          </div>
+          <div class="exp-date">May 2025 – Present</div>
+        </div>
+        <div class="exp-body">
+          <div class="mini-case">
+            <div class="mc-item"><h5>Problem</h5><p>Unilever's forecasting engine needed consistent governance across 8 fragmented European markets, with 15–20 monthly incidents threatening supply chain reliability.</p></div>
+            <div class="mc-item"><h5>Product Thinking</h5><p>Applied MoSCoW prioritization to incident backlog, defined clear acceptance criteria for model enhancements, and structured data readiness for ML pipelines across 7+ datasets.</p></div>
+            <div class="mc-item"><h5>Cross-Functional Lead</h5><p>Managed a 5-member Data Science team and ran bi-weekly governance meetings with global leadership, aligning Data Lake, Kinaxis, and Promotions teams.</p></div>
+          </div>
+          <div class="impact-row">
+            <span class="impact-chip">100% OTIF — 4 months straight</span>
+            <span class="impact-chip">+10% forecasting accuracy</span>
+            <span class="impact-chip">-15% forecast bias</span>
+            <span class="impact-chip">8 European markets</span>
+            <span class="impact-chip">KPI dashboards for SKU-level tracking</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <div class="exp-company">
+            <div class="company-icon iks-icon">IKS</div>
+            <div>
+              <div class="exp-title">Product Manager</div>
+              <div class="exp-sub">IKS Health · AI-powered Healthcare SaaS</div>
+            </div>
+          </div>
+          <div class="exp-date">Apr 2023 – Mar 2025</div>
+        </div>
+        <div class="exp-body">
+          <div class="mini-case">
+            <div class="mc-item"><h5>Problem</h5><p>Healthcare operations relied on manual, error-prone workflows. Physicians lacked a unified portal; document reviews consumed excessive manual hours; data validation lacked AI assistance.</p></div>
+            <div class="mc-item"><h5>Product Thinking</h5><p>Owned full PRD/BRD authorship, RICE-prioritized 500+ user stories, led 0→1 portal from ideation to GTM, and built AI tools with phased rollout strategies for adoption.</p></div>
+            <div class="mc-item"><h5>Technical Collab</h5><p>Directed NLP model tuning, managed VAPT security compliance (10+ issues/quarter), and led backend migration to improve scalability and reduce infrastructure costs.</p></div>
+          </div>
+          <div class="impact-row">
+            <span class="impact-chip">Pre-MVP in 10 days</span>
+            <span class="impact-chip">13 clients acquired</span>
+            <span class="impact-chip">-22% manual effort</span>
+            <span class="impact-chip">90% NLP accuracy</span>
+            <span class="impact-chip">-45% false positives</span>
+            <span class="impact-chip">+15% operational efficiency</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="work" style="background:var(--surface)">
+  <div class="container">
+    <div class="section-label">Featured Product Work</div>
+    <h2 class="section-title">Three products I'm proud of</h2>
+    <div class="case-grid">
+
+      <div class="case-card" style="background:var(--white)">
+        <div class="case-banner teal"></div>
+        <div class="case-content">
+          <div class="case-tag">0→1 Product · Healthcare SaaS</div>
+          <h3 class="case-title">Physician Portal</h3>
+          <p class="case-subtitle">A web-based portal enabling physicians to manage patient workflows — built from ideation to paying clients in under 2 weeks.</p>
+          <div class="case-grid-inner">
+            <div class="case-block"><h6>Problem</h6><p>Physicians navigated 3–4 disconnected systems per workflow, losing 40+ minutes per shift to context switching.</p></div>
+            <div class="case-block"><h6>My Role</h6><p>End-to-end PM. Led discovery, PRD writing, sprint planning, GTM strategy, and post-launch feedback loops.</p></div>
+            <div class="case-block"><h6>Key Decisions</h6><p>Scoped Pre-MVP to 3 core workflows. Used RICE to deprioritize edge cases. Shipped iteratively, not perfectly.</p></div>
+            <div class="case-block"><h6>Tech Collab</h6><p>Defined API contracts, co-authored acceptance criteria, and managed load balancing during scaled rollout.</p></div>
+          </div>
+          <div class="metrics-row">
+            <div class="metric"><div class="metric-val">10</div><div class="metric-lab">days to Pre-MVP</div></div>
+            <div class="metric"><div class="metric-val">13</div><div class="metric-lab">clients acquired</div></div>
+            <div class="metric"><div class="metric-val">15%</div><div class="metric-lab">workflow efficiency gain</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card" style="background:var(--white)">
+        <div class="case-banner blue"></div>
+        <div class="case-content">
+          <div class="case-tag">AI Automation · NLP · Compliance</div>
+          <h3 class="case-title">AI Document Comparison Tool</h3>
+          <p class="case-subtitle">An NLP-powered tool that automates complex document review for regulatory-heavy healthcare workflows.</p>
+          <div class="case-grid-inner">
+            <div class="case-block"><h6>Problem</h6><p>Compliance teams spent 8+ hours weekly manually comparing medical documents — slow, inconsistent, and error-prone.</p></div>
+            <div class="case-block"><h6>My Role</h6><p>Defined product requirements, led NLP model integration strategy, designed phased rollout plan, owned accuracy KPIs.</p></div>
+            <div class="case-block"><h6>Key Decisions</h6><p>Chose contextual NLP over rule-based matching after user testing revealed high false-positive frustration with rules approach.</p></div>
+            <div class="case-block"><h6>Tech Collab</h6><p>Worked with ML engineers to tune thresholds, defined validation datasets, managed HiTrust security requirements.</p></div>
+          </div>
+          <div class="metrics-row">
+            <div class="metric"><div class="metric-val">22%</div><div class="metric-lab">manual effort reduced</div></div>
+            <div class="metric"><div class="metric-val">90%</div><div class="metric-lab">text accuracy</div></div>
+            <div class="metric"><div class="metric-val">-45%</div><div class="metric-lab">false positives</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card" style="background:var(--white)">
+        <div class="case-banner amber"></div>
+        <div class="case-content">
+          <div class="case-tag">Enterprise AI · Supply Chain · Multi-market</div>
+          <h3 class="case-title">Unilever Forecast Engine Utility</h3>
+          <p class="case-subtitle">Enterprise-grade forecasting product supporting Unilever's supply chain planners across 8 European markets.</p>
+          <div class="case-grid-inner">
+            <div class="case-block"><h6>Problem</h6><p>Forecast inaccuracies caused ripple effects across supply chains. Inconsistent data quality and siloed teams made model improvements slow and unreliable.</p></div>
+            <div class="case-block"><h6>My Role</h6><p>Product Consultant leading full product lifecycle — governance, incident prioritization, model enhancement coordination, KPI reporting.</p></div>
+            <div class="case-block"><h6>Key Decisions</h6><p>Structured EDA-1 data assessment before EDA-2 build to reduce rework cycles. Designed central KPI dashboards to replace manual planner analysis.</p></div>
+            <div class="case-block"><h6>Tech Collab</h6><p>Coordinated across Data Lake, Kinaxis, and Promotions teams. Led 3-member DS team for 4-country EDA delivery (2 LATAM + 2 EU).</p></div>
+          </div>
+          <div class="metrics-row">
+            <div class="metric"><div class="metric-val">100%</div><div class="metric-lab">OTIF delivery</div></div>
+            <div class="metric"><div class="metric-val">+10%</div><div class="metric-lab">forecast accuracy</div></div>
+            <div class="metric"><div class="metric-val">-15%</div><div class="metric-lab">forecast bias</div></div>
+            <div class="metric"><div class="metric-val">8</div><div class="metric-lab">EU markets</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-bg" id="projects">
+  <div class="container">
+    <div class="section-label">Data &amp; AI Projects</div>
+    <h2 class="section-title">Academic product work</h2>
+    <p class="section-sub">End-to-end product thinking applied to real-world data problems and business model design.</p>
+    <div class="projects-grid">
+      <div class="proj-card">
+        <div class="proj-icon">🏅</div>
+        <div class="proj-title">Coin-Based Incentive System — Insurtech</div>
+        <div class="proj-desc">Designed a gamified health-incentive product where users earn coins for healthy behaviors, redeemable for insurance premium discounts. Built full Value Proposition Canvas, Business Model Canvas, engagement mechanics, and operational roadmap from scratch.</div>
+        <div class="proj-tags"><span class="proj-tag">Product Strategy</span><span class="proj-tag">Business Model</span><span class="proj-tag">Gamification</span><span class="proj-tag">Insurtech</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">💳</div>
+        <div class="proj-title">Fintech Value Proposition &amp; Growth Model</div>
+        <div class="proj-desc">Conducted customer research across multiple segments to identify core pain points in financial access. Synthesized findings into a value proposition canvas, revenue model, and go-to-market growth strategy. Designed the operational roadmap for MVP execution.</div>
+        <div class="proj-tags"><span class="proj-tag">Customer Research</span><span class="proj-tag">GTM Strategy</span><span class="proj-tag">Fintech</span><span class="proj-tag">Revenue Modeling</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🛒</div>
+        <div class="proj-title">BigBasket Recommender System</div>
+        <div class="proj-desc">Built a product recommendation engine on a 62,142-row transaction dataset using the Apriori algorithm. Generated 1,320 association rules and identified high-lift product bundles to directly inform merchandising and personalization strategy.</div>
+        <div class="proj-tags"><span class="proj-tag">Association Mining</span><span class="proj-tag">Apriori</span><span class="proj-tag">Python</span><span class="proj-tag">Lift Analysis</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">📊</div>
+        <div class="proj-title">Indian Government Price Analytics — Tableau</div>
+        <div class="proj-desc">Analyzed 107,296 rows of government onion price data to uncover regional supply patterns and seasonal trends. Built interactive Tableau dashboards featuring trend lines, heat maps, and supply chain insights for policy-level decision making.</div>
+        <div class="proj-tags"><span class="proj-tag">Tableau</span><span class="proj-tag">Data Visualization</span><span class="proj-tag">Supply Chain</span><span class="proj-tag">Government Data</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Skills &amp; Expertise</div>
+    <h2 class="section-title">What I bring to the table</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Product Management</h4>
+        <div class="skill-list">
+          <div class="skill-item">Agile &amp; Scrum<div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-item">Product Roadmapping<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item">Stakeholder Management<div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item">A/B Testing<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+          <div class="skill-item">Market Analysis<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>AI &amp; Data</h4>
+        <div class="skill-list">
+          <div class="skill-item">Prompt Engineering<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-item">SQL<div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+          <div class="skill-item">Python<div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+          <div class="skill-item">Tableau / Power BI<div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item">NLP Systems<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Frameworks</h4>
+        <div class="skill-list">
+          <div class="skill-item">RICE / MoSCoW<div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-item">Jobs-to-be-Done<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-item">Lean / Six Sigma<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+          <div class="skill-item">OKRs &amp; KPIs<div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-item">PRD / BRD Writing<div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-pill"><div class="tool-dot" style="background:#1D9E75"></div>Figma</div>
+      <div class="tool-pill"><div class="tool-dot" style="background:#378ADD"></div>JIRA</div>
+      <div class="tool-pill"><div class="tool-dot" style="background:#BA7517"></div>Mixpanel</div>
+      <div class="tool-pill"><div class="tool-dot" style="background:#D4537E"></div>Miro</div>
+      <div class="tool-pill"><div class="tool-dot" style="background:#1D9E75"></div>Tableau</div>
+      <div class="tool-pill"><div class="tool-dot" style="background:#378ADD"></div>Power BI</div>
+      <div class="tool-pill"><div class="tool-dot" style="background:#533AB7"></div>Google Analytics</div>
+      <div class="tool-pill"><div class="tool-dot" style="background:#BA7517"></div>Python</div>
+      <div class="tool-pill"><div class="tool-dot" style="background:#2c2c2a"></div>SQL</div>
+      <div class="tool-pill"><div class="tool-dot" style="background:#1D9E75"></div>Kinaxis</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section style="background:var(--surface)" id="certs">
+  <div class="container">
+    <div class="section-label">Certifications</div>
+    <h2 class="section-title">Credentials</h2>
+    <div class="certs-grid">
+      <div class="cert-card scrum"><div class="cert-icon">🏅</div><div class="cert-name">Certified Scrum Product Owner® (CSPO)</div><div class="cert-issuer">Scrum Alliance · 2025</div></div>
+      <div class="cert-card scrum"><div class="cert-icon">🏅</div><div class="cert-name">Certified ScrumMaster® (CSM)</div><div class="cert-issuer">Scrum Alliance · 2025</div></div>
+      <div class="cert-card ai"><div class="cert-icon">🤖</div><div class="cert-name">Agentic AI &amp; AI Agents</div><div class="cert-issuer">Vanderbilt University via Coursera · 2025</div></div>
+      <div class="cert-card ai"><div class="cert-icon">✏️</div><div class="cert-name">Prompt Engineering</div><div class="cert-issuer">Udemy · 2024</div></div>
+      <div class="cert-card six"><div class="cert-icon">📐</div><div class="cert-name">Lean Six Sigma Green Belt</div><div class="cert-issuer">KPMG · 2021</div></div>
+      <div class="cert-card kpmg"><div class="cert-icon">⭐</div><div class="cert-name">5-Star SQL Badge</div><div class="cert-issuer">HackerRank · Expert Level</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="ach-bg" id="achievements">
+  <div class="container">
+    <div class="section-label">Achievements</div>
+    <h2 class="section-title">Recognition</h2>
+    <div class="ach-card">
+      <div class="ach-icon">🏆</div>
+      <div class="ach-body">
+        <h3>Campus Winner — KPMG Ideation Challenge</h3>
+        <p>Selected as campus champion at Goa Institute of Management, competing against 60 teams. The winning solution demonstrated product thinking applied to a real business problem — earning qualification to the National Round.</p>
+        <div class="ach-meta">GIM Campus · 2022 · Qualified for National Round</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's build something.</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center">Open to full-time Product Manager and AI Product Manager roles at tech companies, AI startups, and global enterprises. I'd love to talk about what you're building.</p>
+      <div class="contact-links">
+        <a href="/cdn-cgi/l/email-protection#3242405b5c414742535c56574b0002020772555f535b5e1c515d5f" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l9 6 9-6M3 8v10a1 1 0 001 1h16a1 1 0 001-1V8M3 8a1 1 0 011-1h16a1 1 0 011 1"/></svg>
+          <span class="__cf_email__" data-cfemail="87f7f5eee9f4f2f7e6e9e3e2feb5b7b7b2c7e0eae6eeeba9e4e8ea">[email&#160;protected]</span>
+        </a>
+        <a href="https://www.linkedin.com/in/prinshu-pandey" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn Profile
+        </a>
+        <a href="tel:+917908087969" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          +91 7908087969
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Prinshu P
